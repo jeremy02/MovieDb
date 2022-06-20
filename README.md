@@ -5,14 +5,14 @@ Find The Latest trending and upcoming movies and tv shows with MovieDB app. The 
 ** MovieDb demonstrates the use of modern design approaches.
 
 ## Configuration
-1. Clone this repository. (`git clone https://github.com/ariefzuhri/MovieDb.git`).
+1. Clone this repository. (`git clone https://github.com/jeremy02/MovieDb.git`).
 2. Import the project into Android Studio.
 2. Get your TMBD API key [here](https://developers.themoviedb.org/3/getting-started/introduction).
 3. Open `local.properties` in root directory.
 4. Add your api key by adding this new line `TMDB_API_KEY=YOUR_API_KEY` in the `local.properties` file opened above.
 
 ## License
-This project is licensed under the MIT License. See the [`LICENSE`](https://github.com/ariefzuhri/MovieDb/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License. See the [`LICENSE`](https://github.com/jeremy02/MovieDb/blob/master/LICENSE) file for details.
 
 ## To-do List
 - [ ] Integrate [Koin](https://github.com/google/hilt) - Dependency Injection library.
