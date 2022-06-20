@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.favorite.FavoriteFragment">
+
+    <androidx.core.widget.NestedScrollView
+        style="@style/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view_background"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/blue" />
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="8dp"
+                android:text="@string/favorite"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_nm"
+                app:drawableStartCompat="@drawable/ic_favorite" />
+
+            <HorizontalScrollView
+                android:id="@+id/sv_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_header"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cg_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingHorizontal="16dp"
+                    app:chipSpacingHorizontal="8dp"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_all"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all"
+                        android:textAppearance="@style/MyTextAppearance" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_movie"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/movie"
+                        android:textAppearance="@style/MyTextAppearance" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_tv"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv"
+                        android:textAppearance="@style/MyTextAppearance" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                style="@style/RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sv_category"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="48dp" />
+
+            <LinearLayout
+                android:id="@+id/lyt_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_background"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="42dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/empty_favorite_title"
+                    android:src="@drawable/ic_empty_favorite_86_108" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/empty_favorite_title"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="@dimen/font_nm"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_favorite_desc"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="@dimen/font_nm" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_option"
+        style="@style/FloatingActionButton.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/edit_filter"
+        android:src="@drawable/ic_option"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_filter"
+        style="@style/FloatingActionButton.Mini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fab_option"
+        android:layout_alignStart="@+id/fab_option"
+        android:layout_alignEnd="@+id/fab_option"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/filter"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintBottom_toTopOf="@+id/fab_option"
+        app:layout_constraintEnd_toEndOf="@+id/fab_option"
+        app:layout_constraintStart_toStartOf="@+id/fab_option" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_edit"
+        style="@style/FloatingActionButton.Mini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fab_filter"
+        android:layout_alignStart="@+id/fab_option"
+        android:layout_alignEnd="@+id/fab_option"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/edit"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintBottom_toTopOf="@+id/fab_filter"
+        app:layout_constraintEnd_toEndOf="@+id/fab_option"
+        app:layout_constraintStart_toStartOf="@+id/fab_option" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

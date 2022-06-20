@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:targetApi="o">
+
+    <item
+        android:id="@+id/menu_movie"
+        android:checked="true"
+        android:color="@color/blue"
+        android:icon="@drawable/ic_menu_movie"
+        android:title="@string/movie" />
+
+    <item
+        android:id="@+id/menu_tv"
+        android:color="@color/blue"
+        android:icon="@drawable/ic_menu_tv"
+        android:title="@string/tv" />
+
+    <item
+        android:id="@+id/menu_discover"
+        android:color="@color/blue"
+        android:icon="@drawable/ic_menu_discover"
+        android:title="@string/discover" />
+
+    <item
+        android:id="@+id/menu_favorite"
+        android:color="@color/blue"
+        android:icon="@drawable/ic_menu_favorite"
+        android:title="@string/favorite" />
+</menu>
